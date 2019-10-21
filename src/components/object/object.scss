@@ -1,0 +1,19 @@
+@import './attribute/attribute.scss';
+
+/* ------ The styles for this class are very heavily extensions of the endpoint styles ------ */
+
+.rg-object {
+  @extend .rg-endpoint;
+}
+
+.rg-object-details {
+  @extend .rg-endpoint-details;
+}
+
+.rg-object-title {
+  @extend .rg-endpoint-title;
+}
+
+.rg-object-attributes-title {
+  // border-bottom: 1px solid $gray-lightest;
+}

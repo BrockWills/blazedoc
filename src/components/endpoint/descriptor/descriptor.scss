@@ -1,0 +1,34 @@
+.rg-endpoint-descriptor {
+  width: $extras-width;
+  padding: 12px;
+  margin-bottom: 12px;
+
+  font-size: 0; // Cool fix for the extra space that gets thrown in
+
+  background-color: $gray-dark;
+  border-radius: 8px;
+}
+
+.rg-endpoint-descriptor-method, .rg-endpoint-descriptor-path {
+  font-size: 12px;
+  font-family: $monospace-font;
+
+  color: #ffffff;
+}
+
+.rg-endpoint-descriptor-method {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.rg-endpoint-descriptor-method-get {
+  color: $get-color-light;
+}
+
+.rg-endpoint-descriptor-method-post {
+  color: $post-color-light;
+}
+
+.rg-endpoint-descriptor-method-put {
+  color: $put-color-light;
+}
