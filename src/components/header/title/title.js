@@ -5,7 +5,7 @@ function Title(props) {
   const { children } = props;
 
   return (
-    <h1 className="rg-header-title">
+    <h1 className="text-2xl tracking-tight font-light">
       {children}
     </h1>
   );

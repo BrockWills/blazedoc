@@ -1,6 +1,9 @@
 /* ------ Module imports ------ */
 import React from 'react';
 
+/* ------ Utils ------ */
+import { renderAll } from 'utils/render';
+
 /* ------ Local Components ------ */
 import ChildAttribute from './child-attribute';
 import ChildAttributeList from './child-attribute-list';
@@ -14,22 +17,13 @@ function Attribute(props) {
     type,
   } = props;
 
-  function renderElementByType(type) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-    return elements.length > 0
-      ? elements
-      : null;
-  }
-
-  const childAttributes = renderElementByType(ChildAttribute);
+  const childAttributes = renderAll(children, ChildAttribute);
   return (
-    <div className="rg-object-attribute">
+    <li className="py-3 border-solid border-b border-gray-300 list-none last:border-b-0">
       <p>
-        <span className="rg-object-attribute-name">{name}</span>
-        <span className="rg-object-attribute-type">{type}</span>
-        {expandable && <span className="rg-object-attribute-expandable">EXPANDABLE</span>}
+        <span className="text-sm font-bold">{name}</span>
+        <span className="text-gray-600 text-xs ml-2">{type}</span>
+        {expandable && <span className="text-xs font-medium ml-2 text-blue-500 uppercase">Expandable</span>}
       </p>
 
       <p className="text-sm text-gray-700 mt-2">{description}</p>
@@ -39,7 +33,7 @@ function Attribute(props) {
           {childAttributes}
         </ChildAttributeList>
       )}
-    </div>
+    </li>
   );
 }
 

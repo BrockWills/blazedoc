@@ -53,16 +53,16 @@ function Endpoint(props) {
   }
 
   return (
-    <div id={hash} className="rg-endpoint">
-      <div className="rg-endpoint-details">
-        <h1 className="rg-endpoint-title">{title}</h1>
+    <div id={hash} className="flex justify-between py-16 border-solid border-b border-gray-300 last:border-b-0">
+      <div className="mr-16 flex-1">
+        <h1 className="font-medium uppercase rg-endpoint-title">{title}</h1>
         <p className="text-sm text-gray-700 mt-4">{description}</p>
 
         {renderParams()}
         {renderReturns()}
       </div>
 
-      <div className="rg-endpoint-right">
+      <div>
         <Descriptor
           method={method}
           path={path}

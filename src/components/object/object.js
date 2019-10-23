@@ -1,6 +1,9 @@
 /* ------ Module imports ------ */
 import React from 'react';
 
+/* ------ Utils ------ */
+import { renderAll } from 'utils/render';
+
 /* ------ Components ------ */
 import SectionTitle from 'components/section-title';
 import JsonHighlighter from 'components/json-highlighter';
@@ -15,23 +18,17 @@ function Object(props) {
     title,
   } = props;
 
-  function renderElementByType(type) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-      return elements.length > 0
-        ? elements
-        : null;
-  }
-
   return (
-    <div className="rg-object">
-      <div className="rg-object-details">
-        <h3 className="rg-object-title">{title}</h3>
+    <div className="flex justify-between py-16 border-solid border-b border-gray-300 last:border-b-0">
+      <div className="mr-16 flex-1">
+        <h3 className="font-medium uppercase rg-endpoint-title">{title}</h3>
 
         <SectionTitle>Attributes</SectionTitle>
-        {renderElementByType(Attribute)}
+        <ul>
+          {renderAll(children, Attribute)}
+        </ul>
       </div>
+
       <div>
         <JsonHighlighter>{exampleJSON}</JsonHighlighter>
       </div>

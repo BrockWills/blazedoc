@@ -1,6 +1,9 @@
 /* ------ Module imports ------ */
 import React from 'react';
 
+/* ------ Utils ------ */
+import { renderAll, renderOne } from 'utils/render';
+
 /* ------ Local components ------ */
 import Link from './link';
 import Logo from './logo';
@@ -10,19 +13,10 @@ import Sublink from './sublink';
 function Sidebar(props) {
   const { children } = props;
 
-  function renderElementByType(type, renderAll) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-      return elements.length > 0
-        ? (renderAll ? elements : elements[0])
-        : null;
-  }
-
   return (
-    <div className="rg-sidebar">
-      {renderElementByType(Logo, false)}
-      {renderElementByType(Group, true)}
+    <div className="w-64 min-h-screen p-6 fixed top-0 left-0 border-solid border-r border-gray-300">
+      {renderOne(children, Logo)}
+      {renderAll(children, Group)}
     </div>
   );
 }

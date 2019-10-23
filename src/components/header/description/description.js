@@ -5,7 +5,7 @@ function Description(props) {
   const { children } = props;
 
   return (
-    <p className="rg-header-description">
+    <p className="mt-4 leading-normal text-gray-700">
       {children}
     </p>
   );

@@ -5,8 +5,8 @@ function Page(props) {
   const { children } = props;
 
   return (
-    <div className="rg-page">
-      <div className="rg-page-container">
+    <div className="pl-64">
+      <div className="w-full max-w-4xl m-auto py-12">
         {children}
       </div>
     </div>

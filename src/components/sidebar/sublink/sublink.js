@@ -7,7 +7,7 @@ function Sublink(props) {
 
   return (
     <Link
-      className="rg-sidebar-sublink"
+      className="block py-1 ml-4 text-sm text-gray-700"
       to={`#${hash}`}
     >
       {children}

@@ -2,6 +2,10 @@
 import React from 'react';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
 
+/* ------ Utils ------ */
+import { renderAll } from 'utils/render';
+
+/* ------ Components ------ */
 import Sublink from 'components/sidebar/sublink';
 
 function Link(props) {
@@ -12,25 +16,16 @@ function Link(props) {
     title,
   } = props;
 
-  function renderElementByType(type) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-      return elements.length > 0
-        ? elements
-        : null;
-  }
-
   return (
     <div>
       <RouterLink
-        className="rg-sidebar-link"
+        className="block py-2 text-sm font-medium text-gray-700"
         to={to}
       >
         {title}
       </RouterLink>
 
-      {location.pathname === to && renderElementByType(Sublink)}
+      {location.pathname === to && renderAll(children, Sublink)}
     </div>
   );
 }

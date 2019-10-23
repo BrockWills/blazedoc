@@ -9,21 +9,37 @@ function Endpoint(props) {
     path,
   } = props;
 
+  let color;
+  switch (method) {
+    case 'GET':
+      color = 'blue';
+      break;
+    case 'POST':
+      color = 'green';
+      break;
+    case 'PUT':
+      color = 'orange';
+      break;
+    case 'DELETE':
+      color = 'red';
+      break;
+    default:
+      color = 'gray';
+  }
+
   return (
-    <Link to={'#' + hash} className="rg-header-endpoint-list-endpoint">
-      <span className={'rg-header-endpoint-list-endpoint-method rg-header-endpoint-list-endpoint-method-' + method.toLowerCase()}>{method}</span>
-      <span className="rg-header-endpoint-list-endpoint-path">{path}</span>
+    <Link to={'#' + hash} className="text-xs font-mono rg-header-endpoint-list-endpoint block py-2 px-3">
+      <span className={`inline-block w-10 mr-3 text-${color}-500`}>{method}</span>
+      <span>{path}</span>
     </Link>
   );
 }
 
 function EndpointList(props) {
   return (
-    <div className="rg-header-endpoint-list">
-      <p className="rg-header-endpoint-list-title">Endpoints</p>
-      <div className="rg-header-endpoint-list-body">
-        {props.endpoints.map(endpoint => <Endpoint key={endpoint.hash} {...endpoint} />)}
-      </div>
+    <div className="w-112 ml-6 bg-gray-100 rounded-lg overflow-hidden border-solid border border-gray-300">
+      <p className="py-2 px-3 text-xs text-gray-700 font-medium uppercase bg-gray-300">Endpoints</p>
+      {props.endpoints.map(endpoint => <Endpoint key={endpoint.hash} {...endpoint} />)}
     </div>
   );
 }

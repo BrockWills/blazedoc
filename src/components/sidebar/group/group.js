@@ -1,6 +1,10 @@
 /* ------ Module imports ------ */
 import React from 'react';
 
+/* ------ Utils ------ */
+import { renderAll } from 'utils/render';
+
+/* ------ Components ------ */
 import Link from 'components/sidebar/link';
 
 function Group(props) {
@@ -9,20 +13,11 @@ function Group(props) {
     title,
   } = props;
 
-  function renderElementByType(type) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-      return elements.length > 0
-        ? elements
-        : null;
-  }
-
   return (
-    <div className="rg-sidebar-group">
-      {title && <label className="rg-sidebar-group-title">{title}</label>}
+    <div className="mt-6">
+      {title && <p className="py-2 text-xs font-medium uppercase text-gray-500">{title}</p>}
 
-      {renderElementByType(Link)}
+      {renderAll(children, Link)}
     </div>
   );
 }

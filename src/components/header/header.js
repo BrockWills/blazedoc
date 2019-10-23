@@ -1,6 +1,9 @@
 /* ------ Module imports ------ */
 import React from 'react';
 
+/* ------ Utils ------ */
+import { renderOne } from 'utils/render';
+
 /* ------ Local components ------ */
 import Description from './description';
 import EndpointList from './endpoint-list';
@@ -9,23 +12,14 @@ import Title from './title';
 function Header(props) {
   const { children } = props;
 
-  function renderElementByType(type) {
-    const elements = React.Children.toArray(children)
-      .filter(child => child.type === type);
-
-      return elements.length > 0
-        ? elements[0]
-        : null;
-  }
-
   return (
-    <div className="rg-header">
+    <div className="flex items-center justify-between pb-16 border-solid border-b border-gray-300">
       <div>
-        {renderElementByType(Title)}
-        {renderElementByType(Description)}
+        {renderOne(children, Title)}
+        {renderOne(children, Description)}
       </div>
       <div>
-        {renderElementByType(EndpointList)}
+        {renderOne(children, EndpointList)}
       </div>
     </div>
   );

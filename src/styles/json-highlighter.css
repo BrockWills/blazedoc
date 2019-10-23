@@ -1,0 +1,19 @@
+.hljs {
+  @apply w-112 p-3 m-0 bg-gray-100 border-solid border border-gray-300 rounded-lg;
+}
+
+.hljs-code {
+  @apply text-xs font-mono text-gray-700;
+}
+
+.hljs-attr {
+  @apply font-mono text-gray-700;
+}
+
+.hljs-string {
+  @apply font-mono text-orange-500;
+}
+
+.hljs-number {
+  @apply font-mono text-green-500;
+}

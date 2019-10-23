@@ -7,12 +7,30 @@ function Descriptor(props) {
     path,
   } = props;
 
+  let color;
+  switch (method) {
+    case 'GET':
+      color = 'blue';
+      break;
+    case 'POST':
+      color = 'green';
+      break;
+    case 'PUT':
+      color = 'orange';
+      break;
+    case 'DELETE':
+      color = 'red';
+      break;
+    default:
+      color = 'gray';
+  }
+
   return (
-    <div className="rg-endpoint-descriptor">
-      <span className={'rg-endpoint-descriptor-method rg-endpoint-descriptor-method-' + method.toLowerCase()}>
+    <div className="w-112 bg-gray-800 font-mono text-xs p-3 mb-3 rounded-lg">
+      <span className={`mr-3 text-white text-${color}-300`}>
         {method}
       </span>
-      <span className="rg-endpoint-descriptor-path">
+      <span className="text-white">
         {path}
       </span>
     </div>
