@@ -28,7 +28,7 @@ function Endpoint(props) {
   }
 
   return (
-    <Link to={'#' + hash} className="text-xs font-mono rg-header-endpoint-list-endpoint block py-2 px-3">
+    <Link to={'#' + hash} className="text-xs font-mono block py-2 px-3">
       <span className={`inline-block w-10 mr-3 text-${color}-500`}>{method}</span>
       <span>{path}</span>
     </Link>

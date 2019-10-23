@@ -21,7 +21,7 @@ function Object(props) {
   return (
     <div className="flex justify-between py-16 border-solid border-b border-gray-300 last:border-b-0">
       <div className="mr-16 flex-1">
-        <h3 className="font-medium uppercase rg-endpoint-title">{title}</h3>
+        <h3 className="font-medium uppercase">{title}</h3>
 
         <SectionTitle>Attributes</SectionTitle>
         <ul>
