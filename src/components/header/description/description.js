@@ -5,7 +5,7 @@ function Description(props) {
   const { children } = props;
 
   return (
-    <p className="mt-4 leading-normal text-gray-700">
+    <p className="flex-1 leading-normal text-gray-700">
       {children}
     </p>
   );

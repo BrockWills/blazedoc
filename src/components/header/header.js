@@ -13,12 +13,12 @@ function Header(props) {
   const { children } = props;
 
   return (
-    <div className="flex items-center justify-between pb-16 border-solid border-b border-gray-300">
+    <div className="pb-16 border-solid border-b border-gray-300">
       <div>
         {renderOne(children, Title)}
-        {renderOne(children, Description)}
       </div>
-      <div>
+      <div className="flex justify-between mt-4">
+        {renderOne(children, Description)}
         {renderOne(children, EndpointList)}
       </div>
     </div>
