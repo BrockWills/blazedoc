@@ -20,6 +20,9 @@ function Endpoint(props) {
     case 'PUT':
       color = 'orange';
       break;
+    case 'PATCH':
+      color = 'purple';
+      break;
     case 'DELETE':
       color = 'red';
       break;
