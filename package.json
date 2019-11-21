@@ -1,6 +1,6 @@
 {
   "name": "blazedoc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React component library for building better api docs",
   "author": {
     "name": "Brock Wills",
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "npm run build:styles && rollup -c",
     "build:styles": "postcss src/styles/index.css -o src/styles/tailwind.css",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "main": "dist/index.js",
   "dependencies": {
