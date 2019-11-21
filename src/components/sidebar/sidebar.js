@@ -14,7 +14,7 @@ function Sidebar(props) {
   const { children } = props;
 
   return (
-    <div className="w-64 min-h-screen p-6 fixed top-0 left-0 border-solid border-r border-gray-300">
+    <div className="w-64 min-h-screen max-h-screen overflow-y-scroll p-6 fixed top-0 left-0 border-solid border-r border-gray-300">
       {renderOne(children, Logo)}
       {renderAll(children, Group)}
     </div>
